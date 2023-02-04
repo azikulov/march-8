@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Artico';
+  src: url('../fonts/CRETYPE\ \ ARTICO\ CONDENSED\ EXTRALIGHT.OTF');
+}
+
+@font-face {
+  font-family: 'CyrCtOpEmberly';
+  src: url('../fonts/CYR_CT_OP_EMBERLY\ REGULAR\ [WDTH\,WGHT]-VF.TTF');
+}
+
+@font-face {
+  font-family: 'Docker one';
+  src: url('../fonts/DOCKER\ ONE.TTF');
+}
+
+@font-face {
+  font-family: 'Docker two';
+  src: url('../fonts/DOCKER\ TWO.TTF');
+}
+
+@font-face {
+  font-family: 'Docker three';
+  src: url('../fonts/DOCKER\ THREE.TTF');
+}
+
+@font-face {
+  font-family: 'Moniqa Display';
+  src: url('../fonts/MONIQA-BLACKCONDENSEDDISPLAY.OTF');
+}
+
+@font-face {
+  font-family: 'Moniqa Heading';
+  src: url('../fonts/MONIQA-BLACKCONDENSEDHEADING.OTF');
+}
