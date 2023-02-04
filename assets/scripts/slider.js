@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('audio').play();
+
   const beautyBoxes = [
     {
       src: 'assets/images/boxes/1.png',
@@ -84,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sliderButtons.right.addEventListener('click', () => {
-    if (sliderState < 5) {
-    } else {
+    if (sliderState < 4) {
       sliderState = sliderState + 1;
 
       let currentBox = beautyBoxes[sliderState];
