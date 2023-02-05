@@ -7,8 +7,20 @@
     <title>Art Soffio</title>
     <link rel="stylesheet" href="assets/styles/base.css" />
     <link rel="stylesheet" href="assets/styles/index.css" />
+
+    <style>
+      .beauty-box__poster.hidden {
+        display: none;
+      }
+    </style>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('body').style.display = 'block';
+      });
+    </script>
   </head>
-  <body>
+  <body style="display: none">
     <header class="header">
       <div class="header__logo">
         <svg
@@ -30,9 +42,9 @@
       </div>
       <nav class="header__nav">
         <ul>
-          <li><a href="#" class="header__nav-link active">Главная</a></li>
-          <li><a href="#" class="header__nav-link">Боксы</a></li>
-          <li><a href="#" class="header__nav-link">Контакты</a></li>
+          <li><a href="#home" class="header__nav-link active">Главная</a></li>
+          <li><a href="#boxes" class="header__nav-link">Боксы</a></li>
+          <li><a href="#contacts" class="header__nav-link">Контакты</a></li>
         </ul>
       </nav>
     </header>
@@ -50,32 +62,64 @@
         <img src="assets/images/Сердечко.png" alt="" />
 
         <div class="main-content__social">
-          <a href="#" class="main-content__social-link">
+          <a
+            href="https://instagram.com/artsoffio"
+            class="main-content__social-link"
+          >
             <img src="assets/images/instagram.png" alt="" />
           </a>
-          <a href="#" class="main-content__social-link">
+          <a href="tel:+7 (777) 256-21-49" class="main-content__social-link">
             <img src="assets/images/phone.png" alt="" />
           </a>
-          <a href="#" class="main-content__social-link">
+          <a
+            href="https://wa.me/+77772562149"
+            class="main-content__social-link"
+          >
             <img src="assets/images/whatsapp.png" alt="" />
           </a>
         </div>
       </div>
 
       <div class="main-content__bottom">
-        <a href="#" class="main-content__button"> Написать на WhatsApp </a>
+        <a href="https://wa.me/+77772562149" class="main-content__button">
+          Написать на WhatsApp
+        </a>
         <img src="assets/images/Прямоугольник.png" alt="" />
       </div>
     </main>
 
-    <section class="beauty-box">
+    <section id="boxes" class="beauty-box">
       <p class="beauty-box__title">beauty box</p>
 
-      <div class="beauty-box__column">
+      <div class="beauty-box__column beauty-box__posters">
         <img
           class="beauty-box__poster"
           src="assets/images/boxes/1.png"
           alt=""
+        />
+        <img
+          class="beauty-box__poster"
+          src="assets/images/boxes/2.png"
+          alt=""
+          hidden
+        />
+        <img
+          class="beauty-box__poster"
+          src="assets/images/boxes/3.png"
+          alt=""
+          hidden
+        />
+        <img
+          class="beauty-box__poster"
+          src="assets/images/boxes/4.png"
+          alt=""
+          hidden
+        />
+        <img
+          class="beauty-box__poster"
+          src="assets/images/boxes/5.png"
+          alt=""
+          hidden
         />
       </div>
 
@@ -128,7 +172,7 @@
       </div>
     </section>
 
-    <footer class="footer">
+    <footer id="contacts" class="footer">
       <div class="footer__title">
         <img
           class="footer__title-left"
@@ -261,19 +305,11 @@
     </footer>
 
     <nav class="navbar-bottom">
-      <a href="#" class="navbar-bottom__link">Вызов</a>
-      <a href="#" class="navbar-bottom__link">WhatsApp</a>
+      <a href="tel:+7 (777) 256-21-49" class="navbar-bottom__link">Вызов</a>
+      <a href="https://wa.me/+77772562149" class="navbar-bottom__link"
+        >WhatsApp</a
+      >
     </nav>
-
-    <!-- <embed
-      loop
-      src="assets/audio/АУДИО.mp3"
-      type="audio/mp3"
-      controls
-      autostart="true"
-      autoplay
-      style="margin-bottom: 2rem"
-      /> -->
 
     <audio src="./assets/audio/АУДИО.mp3" loop playsinline hidden></audio>
 

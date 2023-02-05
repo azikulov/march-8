@@ -33,12 +33,42 @@ document.addEventListener('DOMContentLoaded', () => {
     dots: document.querySelectorAll('.beauty-box__dot'),
     title: document.querySelector('.beauty-box__slider-title'),
     price: document.querySelector('.beauty-box__price'),
-    image: document.querySelector('.beauty-box__poster'),
+    images: document.querySelectorAll('.beauty-box__poster'),
   };
+
+  const sliderButtons = {
+    left: document.querySelector('.beauty-box__slider-left'),
+    right: document.querySelector('.beauty-box__slider-right'),
+  };
+
+  // let sliderState = 0;
+
+  // v2
+  // sliderButtons.right.addEventListener('click', () => {
+  //   if (sliderState < 4) {
+  //     sliderState = sliderState + 1;
+
+  //     slider.images[sliderState - 1].classList.add('hidden');
+  //     slider.images[sliderState].classList.remove('hidden');
+  //   }
+  // });
+
+  // sliderButtons.left.addEventListener('click', () => {
+  //   if (sliderState > -1) {
+  //     sliderState = sliderState - 1;
+
+  //     slider.images[sliderState + 1].classList.add('hidden');
+  //     slider.images[sliderState].classList.remove('hidden');
+  //   }
+  // });
+
+  // 1v
 
   function removeAllDots() {
     slider.dots.forEach((sliderDot) => {
-      sliderDot.classList.remove('active');
+      if (sliderDot.classList.contains('active')) {
+        sliderDot.classList.remove('active');
+      }
     });
   }
 
@@ -53,17 +83,18 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderState = index;
         let currentBox = beautyBoxes[index];
 
+        slider.images.forEach((sliderImage) => {
+          if (!sliderImage.hidden) {
+            sliderImage.hidden = true;
+          }
+        });
+
         slider.title.textContent = currentBox.title;
         slider.price.textContent = currentBox.price;
-        slider.image.src = currentBox.src;
+        slider.images[index].hidden = false;
       }
     });
   });
-
-  const sliderButtons = {
-    left: document.querySelector('.beauty-box__slider-left'),
-    right: document.querySelector('.beauty-box__slider-right'),
-  };
 
   function activeDot(index) {
     removeAllDots();
@@ -79,9 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       activeDot(sliderState);
 
+      slider.images.forEach((sliderImage) => {
+        sliderImage.hidden = true;
+      });
+
       slider.title.textContent = currentBox.title;
       slider.price.textContent = currentBox.price;
-      slider.image.src = currentBox.src;
+      slider.images[sliderState].hidden = false;
     }
   });
 
@@ -93,9 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       activeDot(sliderState);
 
+      slider.images.forEach((sliderImage) => {
+        if (!sliderImage.hidden) {
+          sliderImage.hidden = true;
+        }
+      });
+
       slider.title.textContent = currentBox.title;
       slider.price.textContent = currentBox.price;
-      slider.image.src = currentBox.src;
+      slider.images[sliderState].hidden = false;
     }
   });
 });
